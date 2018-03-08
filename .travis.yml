@@ -1,23 +1,24 @@
 language: node_js
 node_js:
-  - "7"
+- '7'
 sudo: true
 dist: trusty
-
 branches:
   only:
   - master
-
 before_script:
- - export CHROME_BIN=/usr/bin/google-chrome
- - export DISPLAY=:99.0
- - sh -e /etc/init.d/xvfb start
- - sudo apt-get update
- - sudo apt-get install -y libappindicator1 fonts-liberation
- - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
- - sudo dpkg -i google-chrome*.deb
-
-script: 
-  - ng test --watch false -cc
-  - npm run e2e
-  - ng build
+- export CHROME_BIN=/usr/bin/google-chrome
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
+- sudo apt-get update
+- sudo apt-get install -y libappindicator1 fonts-liberation
+- wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+- sudo dpkg -i google-chrome*.deb
+script:
+- ng test --watch false -cc
+- npm run e2e
+- ng build
+deploy:
+  provider: heroku
+  api_key:
+    secure: evOMKDkUNCqk0HhXIrWz87bX5NhUw39yYpxLTeq5BtXr6lprs3qzfNAMc2u2hCZbxtOrzz3WXtbYNFB9czIedicEisWL+06pmoUllfMg4KNXsTnSQb8WQ6f1U1OKiX/rKSfl6LdP9INSsQyROhTiV1PIrffzVRQn6p6ab5K1PGQGQd7k1Enz1+WwQus9cCnRlDdFjyZU45t71Mpkplo11605FahU5oCvPIkEZQu4/sMt2s3d5wJu9SmgIHuVJxH+KEoIm0oxF8XaPt7PuMr5QcdfDgw1f14DyCXQklxDg663ODAwnh/qDDn543sXXK6cm+zgXiBd8JctvVtipoxW3ytL6SVVQRHDkAD+c2Bm8d+kaGqxch599DEAjC4X2yIs3iqs47ncds4SV3dbZNSzeXD96u/KMTHPSAMwF03UWpKPrO0rLPZVd90vc6KFKCCOxgv8GTV3Msw42gAtr3Fqh/+ss+3ckSoH5sdf5HyzbdBO5bKSZWqXFqSdAo3xuiKvVr1AFoWjPRwZcZG+vEe6ITdD5C3p9bLsnWAkwehgRbODN7EDM5D+g1fyYJrl2RwZwyPh8pOmsEnK810vmiLl83qtxJHx0I299jCg6UUySCG8aecIGoBF8nwVzS9EtLK7EZ5NzKcMnP6tTnASzlpMvUYlaw8yyD6XNPFLimNd/mo=
