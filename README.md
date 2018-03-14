@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/gianlazz/Hackathon-Manager.svg?branch=master)](https://travis-ci.org/gianlazz/Hackathon-Manager)
+Travis CI: [![Build Status](https://travis-ci.org/gianlazz/Hackathon-Manager.svg?branch=master)](https://travis-ci.org/gianlazz/Hackathon-Manager)
 
 # HackathonManager
 
